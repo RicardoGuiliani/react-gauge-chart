@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _isEqual = _interopRequireDefault(require("lodash/isEqual"));
+var _isEqual = _interopRequireDefault(require("lodash.isEqual"));
 
 var _react = require("react");
 
