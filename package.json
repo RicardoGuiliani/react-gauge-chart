@@ -4,7 +4,7 @@
   "main": "dist/index",
   "module": "dist/index",
   "typings": "dist/index",
-  "homepage": "https://martin36.github.io/react-gauge-chart/",
+  "homepage": "",
   "keywords": [
     "visualization",
     "react",
@@ -60,7 +60,8 @@
   },
   "peerDependencies": {
     "react": "^16.8.2 || ^17.0 || ^18.x",
-    "react-dom": "^16.8.2 || ^17.0 || ^18.x"
+    "react-dom": "^16.8.2 || ^17.0 || ^18.x",
+    "lodash.isequal": "^4.5.0",
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
