@@ -38,7 +38,34 @@ var defaultStyle = {
 
 var animateNeedleProps = ["marginInPercent", "arcPadding", "percent", "nrOfLevels", "animDelay"];
 
-var GaugeChart = function GaugeChart(props) {
+// create a defaultProps constant since React defaultProps is deprecated
+const defaultProps = {
+  style: defaultStyle,
+  marginInPercent: 0.05,
+  cornerRadius: 6,
+  nrOfLevels: 3,
+  percent: 0.4,
+  arcPadding: 0.05,
+  //The padding between arcs, in rad
+  arcWidth: 0.2,
+  //The width of the arc given in percent of the radius
+  colors: ["#00FF00", "#FF0000"],
+  //Default defined colors
+  textColor: "#fff",
+  needleColor: "#464A4F",
+  needleBaseColor: "#464A4F",
+  hideText: false,
+  animate: true,
+  animDelay: 500,
+  formatTextValue: null,
+  fontSize: null,
+  animateDuration: 3000
+};
+
+var GaugeChart = function GaugeChart(_props) {
+  // clone defaultProps (shallow copy) into new props object and replace its values with custom props values set by user
+  const props = {...defaultProps, ..._props};
+  
   var svg = (0, _react.useRef)({});
   var g = (0, _react.useRef)({});
   var width = (0, _react.useRef)({});
@@ -130,28 +157,7 @@ var GaugeChart = function GaugeChart(props) {
 
 var _default = GaugeChart;
 exports.default = _default;
-GaugeChart.defaultProps = {
-  style: defaultStyle,
-  marginInPercent: 0.05,
-  cornerRadius: 6,
-  nrOfLevels: 3,
-  percent: 0.4,
-  arcPadding: 0.05,
-  //The padding between arcs, in rad
-  arcWidth: 0.2,
-  //The width of the arc given in percent of the radius
-  colors: ["#00FF00", "#FF0000"],
-  //Default defined colors
-  textColor: "#fff",
-  needleColor: "#464A4F",
-  needleBaseColor: "#464A4F",
-  hideText: false,
-  animate: true,
-  animDelay: 500,
-  formatTextValue: null,
-  fontSize: null,
-  animateDuration: 3000
-};
+
 GaugeChart.propTypes = {
   id: _propTypes.default.string,
   className: _propTypes.default.string,
